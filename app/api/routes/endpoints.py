@@ -23,7 +23,7 @@ def conectarConBD():
 #CONSTRUYEBDO NUESTROS SERVICIOS
 
 #Cada servicio (operacion o transaccion en BD) debe programarse como una funcion
-@rutas.post("/usuario", response_model=Usuario, summary="Registrar un usuario en la base de datos")
+@rutas.post("/usuario", response_model=UsuarioDTORespuesta, summary="Registrar un usuario en la base de datos")
 def guardarUsuario(datosUsuario:UsuarioDTOPeticion, database:Session=Depends(conectarConBD)):
     try:
         usuario=Usuario(
